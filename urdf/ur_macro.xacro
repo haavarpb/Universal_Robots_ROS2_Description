@@ -384,5 +384,23 @@
       <child link="${prefix}tool0"/>
     </joint>
 
+    <link name="office_collision_link">
+      <visual name="office_collision_box_visual">
+        <geometry>
+          <box size="3 3 0.1"/>
+        </geometry>
+      </visual>
+      <collision name="office_collision_box_collision">
+        <geometry>
+          <box size="3 3 0.1"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="office_collision_joint" type="fixed">
+      <origin xyz="0 0 -0.05"></origin>
+      <parent link="${parent}"></parent>
+      <child link="office_collision_link"></child>
+    </joint>
+
   </xacro:macro>
 </robot>
